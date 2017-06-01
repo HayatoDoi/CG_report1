@@ -1,0 +1,647 @@
+
+solar_system:     ファイル形式 elf64-x86-64
+
+
+セクション .init の逆アセンブル:
+
+0000000000400af8 <_init>:
+  400af8:	48 83 ec 08          	sub    rsp,0x8
+  400afc:	48 8b 05 f5 14 20 00 	mov    rax,QWORD PTR [rip+0x2014f5]        # 601ff8 <__gmon_start__>
+  400b03:	48 85 c0             	test   rax,rax
+  400b06:	74 02                	je     400b0a <_init+0x12>
+  400b08:	ff d0                	call   rax
+  400b0a:	48 83 c4 08          	add    rsp,0x8
+  400b0e:	c3                   	ret    
+
+セクション .plt の逆アセンブル:
+
+0000000000400b10 <.plt>:
+  400b10:	ff 35 f2 14 20 00    	push   QWORD PTR [rip+0x2014f2]        # 602008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400b16:	ff 25 f4 14 20 00    	jmp    QWORD PTR [rip+0x2014f4]        # 602010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400b1c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000400b20 <glutInitWindowPosition@plt>:
+  400b20:	ff 25 f2 14 20 00    	jmp    QWORD PTR [rip+0x2014f2]        # 602018 <glutInitWindowPosition>
+  400b26:	68 00 00 00 00       	push   0x0
+  400b2b:	e9 e0 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b30 <glutSwapBuffers@plt>:
+  400b30:	ff 25 ea 14 20 00    	jmp    QWORD PTR [rip+0x2014ea]        # 602020 <glutSwapBuffers>
+  400b36:	68 01 00 00 00       	push   0x1
+  400b3b:	e9 d0 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b40 <glClear@plt>:
+  400b40:	ff 25 e2 14 20 00    	jmp    QWORD PTR [rip+0x2014e2]        # 602028 <glClear>
+  400b46:	68 02 00 00 00       	push   0x2
+  400b4b:	e9 c0 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b50 <glViewport@plt>:
+  400b50:	ff 25 da 14 20 00    	jmp    QWORD PTR [rip+0x2014da]        # 602030 <glViewport>
+  400b56:	68 03 00 00 00       	push   0x3
+  400b5b:	e9 b0 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b60 <glutPostRedisplay@plt>:
+  400b60:	ff 25 d2 14 20 00    	jmp    QWORD PTR [rip+0x2014d2]        # 602038 <glutPostRedisplay>
+  400b66:	68 04 00 00 00       	push   0x4
+  400b6b:	e9 a0 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b70 <glutReshapeFunc@plt>:
+  400b70:	ff 25 ca 14 20 00    	jmp    QWORD PTR [rip+0x2014ca]        # 602040 <glutReshapeFunc>
+  400b76:	68 05 00 00 00       	push   0x5
+  400b7b:	e9 90 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b80 <glutInitDisplayMode@plt>:
+  400b80:	ff 25 c2 14 20 00    	jmp    QWORD PTR [rip+0x2014c2]        # 602048 <glutInitDisplayMode>
+  400b86:	68 06 00 00 00       	push   0x6
+  400b8b:	e9 80 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400b90 <gluLookAt@plt>:
+  400b90:	ff 25 ba 14 20 00    	jmp    QWORD PTR [rip+0x2014ba]        # 602050 <gluLookAt>
+  400b96:	68 07 00 00 00       	push   0x7
+  400b9b:	e9 70 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400ba0 <glutKeyboardFunc@plt>:
+  400ba0:	ff 25 b2 14 20 00    	jmp    QWORD PTR [rip+0x2014b2]        # 602058 <glutKeyboardFunc>
+  400ba6:	68 08 00 00 00       	push   0x8
+  400bab:	e9 60 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400bb0 <glTranslated@plt>:
+  400bb0:	ff 25 aa 14 20 00    	jmp    QWORD PTR [rip+0x2014aa]        # 602060 <glTranslated>
+  400bb6:	68 09 00 00 00       	push   0x9
+  400bbb:	e9 50 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400bc0 <gluPerspective@plt>:
+  400bc0:	ff 25 a2 14 20 00    	jmp    QWORD PTR [rip+0x2014a2]        # 602068 <gluPerspective>
+  400bc6:	68 0a 00 00 00       	push   0xa
+  400bcb:	e9 40 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400bd0 <exit@plt>:
+  400bd0:	ff 25 9a 14 20 00    	jmp    QWORD PTR [rip+0x20149a]        # 602070 <exit@GLIBC_2.2.5>
+  400bd6:	68 0b 00 00 00       	push   0xb
+  400bdb:	e9 30 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400be0 <glutInit@plt>:
+  400be0:	ff 25 92 14 20 00    	jmp    QWORD PTR [rip+0x201492]        # 602078 <glutInit>
+  400be6:	68 0c 00 00 00       	push   0xc
+  400beb:	e9 20 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400bf0 <glRotated@plt>:
+  400bf0:	ff 25 8a 14 20 00    	jmp    QWORD PTR [rip+0x20148a]        # 602080 <glRotated>
+  400bf6:	68 0d 00 00 00       	push   0xd
+  400bfb:	e9 10 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400c00 <glLoadIdentity@plt>:
+  400c00:	ff 25 82 14 20 00    	jmp    QWORD PTR [rip+0x201482]        # 602088 <glLoadIdentity>
+  400c06:	68 0e 00 00 00       	push   0xe
+  400c0b:	e9 00 ff ff ff       	jmp    400b10 <.plt>
+
+0000000000400c10 <glutMainLoop@plt>:
+  400c10:	ff 25 7a 14 20 00    	jmp    QWORD PTR [rip+0x20147a]        # 602090 <glutMainLoop>
+  400c16:	68 0f 00 00 00       	push   0xf
+  400c1b:	e9 f0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c20 <glMatrixMode@plt>:
+  400c20:	ff 25 72 14 20 00    	jmp    QWORD PTR [rip+0x201472]        # 602098 <glMatrixMode>
+  400c26:	68 10 00 00 00       	push   0x10
+  400c2b:	e9 e0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c30 <glClearColor@plt>:
+  400c30:	ff 25 6a 14 20 00    	jmp    QWORD PTR [rip+0x20146a]        # 6020a0 <glClearColor>
+  400c36:	68 11 00 00 00       	push   0x11
+  400c3b:	e9 d0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c40 <glColor3d@plt>:
+  400c40:	ff 25 62 14 20 00    	jmp    QWORD PTR [rip+0x201462]        # 6020a8 <glColor3d>
+  400c46:	68 12 00 00 00       	push   0x12
+  400c4b:	e9 c0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c50 <glutInitWindowSize@plt>:
+  400c50:	ff 25 5a 14 20 00    	jmp    QWORD PTR [rip+0x20145a]        # 6020b0 <glutInitWindowSize>
+  400c56:	68 13 00 00 00       	push   0x13
+  400c5b:	e9 b0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c60 <glPushMatrix@plt>:
+  400c60:	ff 25 52 14 20 00    	jmp    QWORD PTR [rip+0x201452]        # 6020b8 <glPushMatrix>
+  400c66:	68 14 00 00 00       	push   0x14
+  400c6b:	e9 a0 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c70 <glutTimerFunc@plt>:
+  400c70:	ff 25 4a 14 20 00    	jmp    QWORD PTR [rip+0x20144a]        # 6020c0 <glutTimerFunc>
+  400c76:	68 15 00 00 00       	push   0x15
+  400c7b:	e9 90 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c80 <glutCreateWindow@plt>:
+  400c80:	ff 25 42 14 20 00    	jmp    QWORD PTR [rip+0x201442]        # 6020c8 <glutCreateWindow>
+  400c86:	68 16 00 00 00       	push   0x16
+  400c8b:	e9 80 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400c90 <glutDisplayFunc@plt>:
+  400c90:	ff 25 3a 14 20 00    	jmp    QWORD PTR [rip+0x20143a]        # 6020d0 <glutDisplayFunc>
+  400c96:	68 17 00 00 00       	push   0x17
+  400c9b:	e9 70 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400ca0 <glPopMatrix@plt>:
+  400ca0:	ff 25 32 14 20 00    	jmp    QWORD PTR [rip+0x201432]        # 6020d8 <glPopMatrix>
+  400ca6:	68 18 00 00 00       	push   0x18
+  400cab:	e9 60 fe ff ff       	jmp    400b10 <.plt>
+
+0000000000400cb0 <glutWireSphere@plt>:
+  400cb0:	ff 25 2a 14 20 00    	jmp    QWORD PTR [rip+0x20142a]        # 6020e0 <glutWireSphere>
+  400cb6:	68 19 00 00 00       	push   0x19
+  400cbb:	e9 50 fe ff ff       	jmp    400b10 <.plt>
+
+セクション .text の逆アセンブル:
+
+0000000000400cc0 <_start>:
+  400cc0:	31 ed                	xor    ebp,ebp
+  400cc2:	49 89 d1             	mov    r9,rdx
+  400cc5:	5e                   	pop    rsi
+  400cc6:	48 89 e2             	mov    rdx,rsp
+  400cc9:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+  400ccd:	50                   	push   rax
+  400cce:	54                   	push   rsp
+  400ccf:	49 c7 c0 70 13 40 00 	mov    r8,0x401370
+  400cd6:	48 c7 c1 00 13 40 00 	mov    rcx,0x401300
+  400cdd:	48 c7 c7 8f 12 40 00 	mov    rdi,0x40128f
+  400ce4:	ff 15 06 13 20 00    	call   QWORD PTR [rip+0x201306]        # 601ff0 <__libc_start_main@GLIBC_2.2.5>
+  400cea:	f4                   	hlt    
+  400ceb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000400cf0 <deregister_tm_clones>:
+  400cf0:	b8 cf 21 60 00       	mov    eax,0x6021cf
+  400cf5:	55                   	push   rbp
+  400cf6:	48 2d c8 21 60 00    	sub    rax,0x6021c8
+  400cfc:	48 83 f8 0e          	cmp    rax,0xe
+  400d00:	48 89 e5             	mov    rbp,rsp
+  400d03:	76 1b                	jbe    400d20 <deregister_tm_clones+0x30>
+  400d05:	b8 00 00 00 00       	mov    eax,0x0
+  400d0a:	48 85 c0             	test   rax,rax
+  400d0d:	74 11                	je     400d20 <deregister_tm_clones+0x30>
+  400d0f:	5d                   	pop    rbp
+  400d10:	bf c8 21 60 00       	mov    edi,0x6021c8
+  400d15:	ff e0                	jmp    rax
+  400d17:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+  400d1e:	00 00 
+  400d20:	5d                   	pop    rbp
+  400d21:	c3                   	ret    
+  400d22:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+  400d26:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+  400d2d:	00 00 00 
+
+0000000000400d30 <register_tm_clones>:
+  400d30:	be c8 21 60 00       	mov    esi,0x6021c8
+  400d35:	55                   	push   rbp
+  400d36:	48 81 ee c8 21 60 00 	sub    rsi,0x6021c8
+  400d3d:	48 c1 fe 03          	sar    rsi,0x3
+  400d41:	48 89 e5             	mov    rbp,rsp
+  400d44:	48 89 f0             	mov    rax,rsi
+  400d47:	48 c1 e8 3f          	shr    rax,0x3f
+  400d4b:	48 01 c6             	add    rsi,rax
+  400d4e:	48 d1 fe             	sar    rsi,1
+  400d51:	74 15                	je     400d68 <register_tm_clones+0x38>
+  400d53:	b8 00 00 00 00       	mov    eax,0x0
+  400d58:	48 85 c0             	test   rax,rax
+  400d5b:	74 0b                	je     400d68 <register_tm_clones+0x38>
+  400d5d:	5d                   	pop    rbp
+  400d5e:	bf c8 21 60 00       	mov    edi,0x6021c8
+  400d63:	ff e0                	jmp    rax
+  400d65:	0f 1f 00             	nop    DWORD PTR [rax]
+  400d68:	5d                   	pop    rbp
+  400d69:	c3                   	ret    
+  400d6a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000400d70 <__do_global_dtors_aux>:
+  400d70:	80 3d 4d 14 20 00 00 	cmp    BYTE PTR [rip+0x20144d],0x0        # 6021c4 <_edata>
+  400d77:	75 11                	jne    400d8a <__do_global_dtors_aux+0x1a>
+  400d79:	55                   	push   rbp
+  400d7a:	48 89 e5             	mov    rbp,rsp
+  400d7d:	e8 6e ff ff ff       	call   400cf0 <deregister_tm_clones>
+  400d82:	5d                   	pop    rbp
+  400d83:	c6 05 3a 14 20 00 01 	mov    BYTE PTR [rip+0x20143a],0x1        # 6021c4 <_edata>
+  400d8a:	f3 c3                	repz ret 
+  400d8c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000400d90 <frame_dummy>:
+  400d90:	bf d8 1d 60 00       	mov    edi,0x601dd8
+  400d95:	48 83 3f 00          	cmp    QWORD PTR [rdi],0x0
+  400d99:	75 05                	jne    400da0 <frame_dummy+0x10>
+  400d9b:	eb 93                	jmp    400d30 <register_tm_clones>
+  400d9d:	0f 1f 00             	nop    DWORD PTR [rax]
+  400da0:	b8 00 00 00 00       	mov    eax,0x0
+  400da5:	48 85 c0             	test   rax,rax
+  400da8:	74 f1                	je     400d9b <frame_dummy+0xb>
+  400daa:	55                   	push   rbp
+  400dab:	48 89 e5             	mov    rbp,rsp
+  400dae:	ff d0                	call   rax
+  400db0:	5d                   	pop    rbp
+  400db1:	e9 7a ff ff ff       	jmp    400d30 <register_tm_clones>
+
+0000000000400db6 <myInit>:
+  400db6:	55                   	push   rbp
+  400db7:	48 89 e5             	mov    rbp,rsp
+  400dba:	bf 02 00 00 00       	mov    edi,0x2
+  400dbf:	e8 bc fd ff ff       	call   400b80 <glutInitDisplayMode@plt>
+  400dc4:	be bc 02 00 00       	mov    esi,0x2bc
+  400dc9:	bf 14 05 00 00       	mov    edi,0x514
+  400dce:	e8 7d fe ff ff       	call   400c50 <glutInitWindowSize@plt>
+  400dd3:	be 00 00 00 00       	mov    esi,0x0
+  400dd8:	bf 00 00 00 00       	mov    edi,0x0
+  400ddd:	e8 3e fd ff ff       	call   400b20 <glutInitWindowPosition@plt>
+  400de2:	bf 88 13 40 00       	mov    edi,0x401388
+  400de7:	e8 94 fe ff ff       	call   400c80 <glutCreateWindow@plt>
+  400dec:	66 0f ef db          	pxor   xmm3,xmm3
+  400df0:	66 0f ef d2          	pxor   xmm2,xmm2
+  400df4:	66 0f ef c9          	pxor   xmm1,xmm1
+  400df8:	66 0f ef c0          	pxor   xmm0,xmm0
+  400dfc:	e8 2f fe ff ff       	call   400c30 <glClearColor@plt>
+  400e01:	90                   	nop
+  400e02:	5d                   	pop    rbp
+  400e03:	c3                   	ret    
+
+0000000000400e04 <myDisplay>:
+  400e04:	55                   	push   rbp
+  400e05:	48 89 e5             	mov    rbp,rsp
+  400e08:	48 83 ec 20          	sub    rsp,0x20
+  400e0c:	bf 00 40 00 00       	mov    edi,0x4000
+  400e11:	e8 2a fd ff ff       	call   400b40 <glClear@plt>
+  400e16:	f2 0f 10 15 82 05 00 	movsd  xmm2,QWORD PTR [rip+0x582]        # 4013a0 <_IO_stdin_used+0x20>
+  400e1d:	00 
+  400e1e:	f2 0f 10 0d 7a 05 00 	movsd  xmm1,QWORD PTR [rip+0x57a]        # 4013a0 <_IO_stdin_used+0x20>
+  400e25:	00 
+  400e26:	f2 0f 10 05 72 05 00 	movsd  xmm0,QWORD PTR [rip+0x572]        # 4013a0 <_IO_stdin_used+0x20>
+  400e2d:	00 
+  400e2e:	e8 0d fe ff ff       	call   400c40 <glColor3d@plt>
+  400e33:	e8 28 fe ff ff       	call   400c60 <glPushMatrix@plt>
+  400e38:	be 10 00 00 00       	mov    esi,0x10
+  400e3d:	bf 14 00 00 00       	mov    edi,0x14
+  400e42:	f2 0f 10 05 56 05 00 	movsd  xmm0,QWORD PTR [rip+0x556]        # 4013a0 <_IO_stdin_used+0x20>
+  400e49:	00 
+  400e4a:	e8 61 fe ff ff       	call   400cb0 <glutWireSphere@plt>
+  400e4f:	8b 05 e3 12 20 00    	mov    eax,DWORD PTR [rip+0x2012e3]        # 602138 <earth+0x18>
+  400e55:	66 0f ef c0          	pxor   xmm0,xmm0
+  400e59:	f2 0f 2a c0          	cvtsi2sd xmm0,eax
+  400e5d:	66 0f ef db          	pxor   xmm3,xmm3
+  400e61:	f2 0f 10 15 37 05 00 	movsd  xmm2,QWORD PTR [rip+0x537]        # 4013a0 <_IO_stdin_used+0x20>
+  400e68:	00 
+  400e69:	66 0f ef c9          	pxor   xmm1,xmm1
+  400e6d:	e8 7e fd ff ff       	call   400bf0 <glRotated@plt>
+  400e72:	48 8b 05 af 12 20 00 	mov    rax,QWORD PTR [rip+0x2012af]        # 602128 <earth+0x8>
+  400e79:	66 0f ef d2          	pxor   xmm2,xmm2
+  400e7d:	66 0f ef c9          	pxor   xmm1,xmm1
+  400e81:	48 89 45 e8          	mov    QWORD PTR [rbp-0x18],rax
+  400e85:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  400e8a:	e8 21 fd ff ff       	call   400bb0 <glTranslated@plt>
+  400e8f:	8b 05 33 13 20 00    	mov    eax,DWORD PTR [rip+0x201333]        # 6021c8 <__TMC_END__>
+  400e95:	66 0f ef c0          	pxor   xmm0,xmm0
+  400e99:	f2 0f 2a c0          	cvtsi2sd xmm0,eax
+  400e9d:	66 0f ef db          	pxor   xmm3,xmm3
+  400ea1:	f2 0f 10 15 f7 04 00 	movsd  xmm2,QWORD PTR [rip+0x4f7]        # 4013a0 <_IO_stdin_used+0x20>
+  400ea8:	00 
+  400ea9:	66 0f ef c9          	pxor   xmm1,xmm1
+  400ead:	e8 3e fd ff ff       	call   400bf0 <glRotated@plt>
+  400eb2:	48 8b 05 67 12 20 00 	mov    rax,QWORD PTR [rip+0x201267]        # 602120 <earth>
+  400eb9:	be 08 00 00 00       	mov    esi,0x8
+  400ebe:	bf 0a 00 00 00       	mov    edi,0xa
+  400ec3:	48 89 45 e8          	mov    QWORD PTR [rbp-0x18],rax
+  400ec7:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  400ecc:	e8 df fd ff ff       	call   400cb0 <glutWireSphere@plt>
+  400ed1:	e8 8a fd ff ff       	call   400c60 <glPushMatrix@plt>
+  400ed6:	48 8b 05 cb 04 00 00 	mov    rax,QWORD PTR [rip+0x4cb]        # 4013a8 <_IO_stdin_used+0x28>
+  400edd:	66 0f ef d2          	pxor   xmm2,xmm2
+  400ee1:	66 0f ef c9          	pxor   xmm1,xmm1
+  400ee5:	48 89 45 e8          	mov    QWORD PTR [rbp-0x18],rax
+  400ee9:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  400eee:	e8 bd fc ff ff       	call   400bb0 <glTranslated@plt>
+  400ef3:	8b 05 cf 12 20 00    	mov    eax,DWORD PTR [rip+0x2012cf]        # 6021c8 <__TMC_END__>
+  400ef9:	66 0f ef c0          	pxor   xmm0,xmm0
+  400efd:	f2 0f 2a c0          	cvtsi2sd xmm0,eax
+  400f01:	66 0f ef db          	pxor   xmm3,xmm3
+  400f05:	f2 0f 10 15 93 04 00 	movsd  xmm2,QWORD PTR [rip+0x493]        # 4013a0 <_IO_stdin_used+0x20>
+  400f0c:	00 
+  400f0d:	66 0f ef c9          	pxor   xmm1,xmm1
+  400f11:	e8 da fc ff ff       	call   400bf0 <glRotated@plt>
+  400f16:	f2 0f 10 0d 02 12 20 	movsd  xmm1,QWORD PTR [rip+0x201202]        # 602120 <earth>
+  400f1d:	00 
+  400f1e:	f2 0f 10 05 8a 04 00 	movsd  xmm0,QWORD PTR [rip+0x48a]        # 4013b0 <_IO_stdin_used+0x30>
+  400f25:	00 
+  400f26:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+  400f2a:	be 08 00 00 00       	mov    esi,0x8
+  400f2f:	bf 0a 00 00 00       	mov    edi,0xa
+  400f34:	e8 77 fd ff ff       	call   400cb0 <glutWireSphere@plt>
+  400f39:	e8 62 fd ff ff       	call   400ca0 <glPopMatrix@plt>
+  400f3e:	e8 5d fd ff ff       	call   400ca0 <glPopMatrix@plt>
+  400f43:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  400f4a:	e9 b9 00 00 00       	jmp    401008 <myDisplay+0x204>
+  400f4f:	e8 0c fd ff ff       	call   400c60 <glPushMatrix@plt>
+  400f54:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  400f57:	48 98                	cdqe   
+  400f59:	48 c1 e0 05          	shl    rax,0x5
+  400f5d:	48 05 58 21 60 00    	add    rax,0x602158
+  400f63:	8b 00                	mov    eax,DWORD PTR [rax]
+  400f65:	66 0f ef c0          	pxor   xmm0,xmm0
+  400f69:	f2 0f 2a c0          	cvtsi2sd xmm0,eax
+  400f6d:	66 0f ef db          	pxor   xmm3,xmm3
+  400f71:	f2 0f 10 15 27 04 00 	movsd  xmm2,QWORD PTR [rip+0x427]        # 4013a0 <_IO_stdin_used+0x20>
+  400f78:	00 
+  400f79:	66 0f ef c9          	pxor   xmm1,xmm1
+  400f7d:	e8 6e fc ff ff       	call   400bf0 <glRotated@plt>
+  400f82:	f2 0f 10 0d 9e 11 20 	movsd  xmm1,QWORD PTR [rip+0x20119e]        # 602128 <earth+0x8>
+  400f89:	00 
+  400f8a:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  400f8d:	48 98                	cdqe   
+  400f8f:	48 c1 e0 05          	shl    rax,0x5
+  400f93:	48 05 48 21 60 00    	add    rax,0x602148
+  400f99:	f2 0f 10 00          	movsd  xmm0,QWORD PTR [rax]
+  400f9d:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+  400fa1:	66 0f ef d2          	pxor   xmm2,xmm2
+  400fa5:	66 0f ef c9          	pxor   xmm1,xmm1
+  400fa9:	e8 02 fc ff ff       	call   400bb0 <glTranslated@plt>
+  400fae:	8b 05 14 12 20 00    	mov    eax,DWORD PTR [rip+0x201214]        # 6021c8 <__TMC_END__>
+  400fb4:	66 0f ef c0          	pxor   xmm0,xmm0
+  400fb8:	f2 0f 2a c0          	cvtsi2sd xmm0,eax
+  400fbc:	66 0f ef db          	pxor   xmm3,xmm3
+  400fc0:	f2 0f 10 15 d8 03 00 	movsd  xmm2,QWORD PTR [rip+0x3d8]        # 4013a0 <_IO_stdin_used+0x20>
+  400fc7:	00 
+  400fc8:	66 0f ef c9          	pxor   xmm1,xmm1
+  400fcc:	e8 1f fc ff ff       	call   400bf0 <glRotated@plt>
+  400fd1:	f2 0f 10 0d 47 11 20 	movsd  xmm1,QWORD PTR [rip+0x201147]        # 602120 <earth>
+  400fd8:	00 
+  400fd9:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  400fdc:	48 98                	cdqe   
+  400fde:	48 c1 e0 05          	shl    rax,0x5
+  400fe2:	48 05 40 21 60 00    	add    rax,0x602140
+  400fe8:	f2 0f 10 00          	movsd  xmm0,QWORD PTR [rax]
+  400fec:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+  400ff0:	be 08 00 00 00       	mov    esi,0x8
+  400ff5:	bf 0a 00 00 00       	mov    edi,0xa
+  400ffa:	e8 b1 fc ff ff       	call   400cb0 <glutWireSphere@plt>
+  400fff:	e8 9c fc ff ff       	call   400ca0 <glPopMatrix@plt>
+  401004:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+  401008:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  40100b:	83 f8 7f             	cmp    eax,0x7f
+  40100e:	0f 86 3b ff ff ff    	jbe    400f4f <myDisplay+0x14b>
+  401014:	e8 17 fb ff ff       	call   400b30 <glutSwapBuffers@plt>
+  401019:	90                   	nop
+  40101a:	c9                   	leave  
+  40101b:	c3                   	ret    
+
+000000000040101c <myReshape>:
+  40101c:	55                   	push   rbp
+  40101d:	48 89 e5             	mov    rbp,rsp
+  401020:	48 83 ec 10          	sub    rsp,0x10
+  401024:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+  401027:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+  40102a:	8b 55 f8             	mov    edx,DWORD PTR [rbp-0x8]
+  40102d:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  401030:	89 d1                	mov    ecx,edx
+  401032:	89 c2                	mov    edx,eax
+  401034:	be 00 00 00 00       	mov    esi,0x0
+  401039:	bf 00 00 00 00       	mov    edi,0x0
+  40103e:	e8 0d fb ff ff       	call   400b50 <glViewport@plt>
+  401043:	bf 01 17 00 00       	mov    edi,0x1701
+  401048:	e8 d3 fb ff ff       	call   400c20 <glMatrixMode@plt>
+  40104d:	e8 ae fb ff ff       	call   400c00 <glLoadIdentity@plt>
+  401052:	66 0f ef c0          	pxor   xmm0,xmm0
+  401056:	f2 0f 2a 45 fc       	cvtsi2sd xmm0,DWORD PTR [rbp-0x4]
+  40105b:	66 0f ef c9          	pxor   xmm1,xmm1
+  40105f:	f2 0f 2a 4d f8       	cvtsi2sd xmm1,DWORD PTR [rbp-0x8]
+  401064:	f2 0f 5e c1          	divsd  xmm0,xmm1
+  401068:	f2 0f 10 15 48 03 00 	movsd  xmm2,QWORD PTR [rip+0x348]        # 4013b8 <_IO_stdin_used+0x38>
+  40106f:	00 
+  401070:	f2 0f 10 0d 48 03 00 	movsd  xmm1,QWORD PTR [rip+0x348]        # 4013c0 <_IO_stdin_used+0x40>
+  401077:	00 
+  401078:	48 8b 05 49 03 00 00 	mov    rax,QWORD PTR [rip+0x349]        # 4013c8 <_IO_stdin_used+0x48>
+  40107f:	66 0f 28 da          	movapd xmm3,xmm2
+  401083:	66 0f 28 d1          	movapd xmm2,xmm1
+  401087:	66 0f 28 c8          	movapd xmm1,xmm0
+  40108b:	48 89 45 f0          	mov    QWORD PTR [rbp-0x10],rax
+  40108f:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  401094:	e8 27 fb ff ff       	call   400bc0 <gluPerspective@plt>
+  401099:	bf 00 17 00 00       	mov    edi,0x1700
+  40109e:	e8 7d fb ff ff       	call   400c20 <glMatrixMode@plt>
+  4010a3:	e8 58 fb ff ff       	call   400c00 <glLoadIdentity@plt>
+  4010a8:	f2 0f 10 15 20 03 00 	movsd  xmm2,QWORD PTR [rip+0x320]        # 4013d0 <_IO_stdin_used+0x50>
+  4010af:	00 
+  4010b0:	f2 0f 10 0d 20 03 00 	movsd  xmm1,QWORD PTR [rip+0x320]        # 4013d8 <_IO_stdin_used+0x58>
+  4010b7:	00 
+  4010b8:	48 83 ec 08          	sub    rsp,0x8
+  4010bc:	66 0f ef c0          	pxor   xmm0,xmm0
+  4010c0:	48 8d 64 24 f8       	lea    rsp,[rsp-0x8]
+  4010c5:	f2 0f 11 04 24       	movsd  QWORD PTR [rsp],xmm0
+  4010ca:	f2 0f 10 3d ce 02 00 	movsd  xmm7,QWORD PTR [rip+0x2ce]        # 4013a0 <_IO_stdin_used+0x20>
+  4010d1:	00 
+  4010d2:	66 0f ef f6          	pxor   xmm6,xmm6
+  4010d6:	66 0f ef ed          	pxor   xmm5,xmm5
+  4010da:	66 0f ef e4          	pxor   xmm4,xmm4
+  4010de:	66 0f ef db          	pxor   xmm3,xmm3
+  4010e2:	66 0f ef c0          	pxor   xmm0,xmm0
+  4010e6:	e8 a5 fa ff ff       	call   400b90 <gluLookAt@plt>
+  4010eb:	48 83 c4 10          	add    rsp,0x10
+  4010ef:	90                   	nop
+  4010f0:	c9                   	leave  
+  4010f1:	c3                   	ret    
+
+00000000004010f2 <myKeyboard>:
+  4010f2:	55                   	push   rbp
+  4010f3:	48 89 e5             	mov    rbp,rsp
+  4010f6:	48 83 ec 10          	sub    rsp,0x10
+  4010fa:	89 f8                	mov    eax,edi
+  4010fc:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+  4010ff:	89 55 f4             	mov    DWORD PTR [rbp-0xc],edx
+  401102:	88 45 fc             	mov    BYTE PTR [rbp-0x4],al
+  401105:	0f b6 45 fc          	movzx  eax,BYTE PTR [rbp-0x4]
+  401109:	83 f8 1b             	cmp    eax,0x1b
+  40110c:	74 02                	je     401110 <myKeyboard+0x1e>
+  40110e:	eb 0a                	jmp    40111a <myKeyboard+0x28>
+  401110:	bf 00 00 00 00       	mov    edi,0x0
+  401115:	e8 b6 fa ff ff       	call   400bd0 <exit@plt>
+  40111a:	90                   	nop
+  40111b:	c9                   	leave  
+  40111c:	c3                   	ret    
+
+000000000040111d <myTimer>:
+  40111d:	55                   	push   rbp
+  40111e:	48 89 e5             	mov    rbp,rsp
+  401121:	48 83 ec 20          	sub    rsp,0x20
+  401125:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi
+  401128:	83 7d ec 01          	cmp    DWORD PTR [rbp-0x14],0x1
+  40112c:	0f 85 5a 01 00 00    	jne    40128c <myTimer+0x16f>
+  401132:	8b 05 88 10 20 00    	mov    eax,DWORD PTR [rip+0x201088]        # 6021c0 <samplingTime>
+  401138:	ba 01 00 00 00       	mov    edx,0x1
+  40113d:	be 1d 11 40 00       	mov    esi,0x40111d
+  401142:	89 c7                	mov    edi,eax
+  401144:	e8 27 fb ff ff       	call   400c70 <glutTimerFunc@plt>
+  401149:	8b 05 e9 0f 20 00    	mov    eax,DWORD PTR [rip+0x200fe9]        # 602138 <earth+0x18>
+  40114f:	66 0f ef c9          	pxor   xmm1,xmm1
+  401153:	f2 0f 2a c8          	cvtsi2sd xmm1,eax
+  401157:	f2 0f 10 15 d1 0f 20 	movsd  xmm2,QWORD PTR [rip+0x200fd1]        # 602130 <earth+0x10>
+  40115e:	00 
+  40115f:	f2 0f 10 05 79 02 00 	movsd  xmm0,QWORD PTR [rip+0x279]        # 4013e0 <_IO_stdin_used+0x60>
+  401166:	00 
+  401167:	f2 0f 59 c2          	mulsd  xmm0,xmm2
+  40116b:	f2 0f 10 15 75 02 00 	movsd  xmm2,QWORD PTR [rip+0x275]        # 4013e8 <_IO_stdin_used+0x68>
+  401172:	00 
+  401173:	f2 0f 5e c2          	divsd  xmm0,xmm2
+  401177:	f2 0f 58 c1          	addsd  xmm0,xmm1
+  40117b:	f2 0f 2c c8          	cvttsd2si ecx,xmm0
+  40117f:	ba b7 60 0b b6       	mov    edx,0xb60b60b7
+  401184:	89 c8                	mov    eax,ecx
+  401186:	f7 ea                	imul   edx
+  401188:	8d 04 0a             	lea    eax,[rdx+rcx*1]
+  40118b:	c1 f8 08             	sar    eax,0x8
+  40118e:	89 c2                	mov    edx,eax
+  401190:	89 c8                	mov    eax,ecx
+  401192:	c1 f8 1f             	sar    eax,0x1f
+  401195:	29 c2                	sub    edx,eax
+  401197:	89 d0                	mov    eax,edx
+  401199:	69 c0 68 01 00 00    	imul   eax,eax,0x168
+  40119f:	29 c1                	sub    ecx,eax
+  4011a1:	89 c8                	mov    eax,ecx
+  4011a3:	89 05 8f 0f 20 00    	mov    DWORD PTR [rip+0x200f8f],eax        # 602138 <earth+0x18>
+  4011a9:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  4011b0:	e9 93 00 00 00       	jmp    401248 <myTimer+0x12b>
+  4011b5:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  4011b8:	48 98                	cdqe   
+  4011ba:	48 c1 e0 05          	shl    rax,0x5
+  4011be:	48 05 58 21 60 00    	add    rax,0x602158
+  4011c4:	8b 00                	mov    eax,DWORD PTR [rax]
+  4011c6:	66 0f ef c9          	pxor   xmm1,xmm1
+  4011ca:	f2 0f 2a c8          	cvtsi2sd xmm1,eax
+  4011ce:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  4011d1:	48 98                	cdqe   
+  4011d3:	48 c1 e0 05          	shl    rax,0x5
+  4011d7:	48 05 50 21 60 00    	add    rax,0x602150
+  4011dd:	f2 0f 10 10          	movsd  xmm2,QWORD PTR [rax]
+  4011e1:	f2 0f 10 05 47 0f 20 	movsd  xmm0,QWORD PTR [rip+0x200f47]        # 602130 <earth+0x10>
+  4011e8:	00 
+  4011e9:	f2 0f 59 c2          	mulsd  xmm0,xmm2
+  4011ed:	f2 0f 10 15 eb 01 00 	movsd  xmm2,QWORD PTR [rip+0x1eb]        # 4013e0 <_IO_stdin_used+0x60>
+  4011f4:	00 
+  4011f5:	f2 0f 59 c2          	mulsd  xmm0,xmm2
+  4011f9:	f2 0f 10 15 e7 01 00 	movsd  xmm2,QWORD PTR [rip+0x1e7]        # 4013e8 <_IO_stdin_used+0x68>
+  401200:	00 
+  401201:	f2 0f 5e c2          	divsd  xmm0,xmm2
+  401205:	f2 0f 58 c1          	addsd  xmm0,xmm1
+  401209:	f2 0f 2c c8          	cvttsd2si ecx,xmm0
+  40120d:	ba b7 60 0b b6       	mov    edx,0xb60b60b7
+  401212:	89 c8                	mov    eax,ecx
+  401214:	f7 ea                	imul   edx
+  401216:	8d 04 0a             	lea    eax,[rdx+rcx*1]
+  401219:	c1 f8 08             	sar    eax,0x8
+  40121c:	89 c2                	mov    edx,eax
+  40121e:	89 c8                	mov    eax,ecx
+  401220:	c1 f8 1f             	sar    eax,0x1f
+  401223:	29 c2                	sub    edx,eax
+  401225:	89 d0                	mov    eax,edx
+  401227:	69 c0 68 01 00 00    	imul   eax,eax,0x168
+  40122d:	29 c1                	sub    ecx,eax
+  40122f:	89 c8                	mov    eax,ecx
+  401231:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+  401234:	48 63 d2             	movsxd rdx,edx
+  401237:	48 c1 e2 05          	shl    rdx,0x5
+  40123b:	48 81 c2 58 21 60 00 	add    rdx,0x602158
+  401242:	89 02                	mov    DWORD PTR [rdx],eax
+  401244:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+  401248:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  40124b:	83 f8 7f             	cmp    eax,0x7f
+  40124e:	0f 86 61 ff ff ff    	jbe    4011b5 <myTimer+0x98>
+  401254:	8b 05 6e 0f 20 00    	mov    eax,DWORD PTR [rip+0x200f6e]        # 6021c8 <__TMC_END__>
+  40125a:	8d 48 05             	lea    ecx,[rax+0x5]
+  40125d:	ba b7 60 0b b6       	mov    edx,0xb60b60b7
+  401262:	89 c8                	mov    eax,ecx
+  401264:	f7 ea                	imul   edx
+  401266:	8d 04 0a             	lea    eax,[rdx+rcx*1]
+  401269:	c1 f8 08             	sar    eax,0x8
+  40126c:	89 c2                	mov    edx,eax
+  40126e:	89 c8                	mov    eax,ecx
+  401270:	c1 f8 1f             	sar    eax,0x1f
+  401273:	29 c2                	sub    edx,eax
+  401275:	89 d0                	mov    eax,edx
+  401277:	69 c0 68 01 00 00    	imul   eax,eax,0x168
+  40127d:	29 c1                	sub    ecx,eax
+  40127f:	89 c8                	mov    eax,ecx
+  401281:	89 05 41 0f 20 00    	mov    DWORD PTR [rip+0x200f41],eax        # 6021c8 <__TMC_END__>
+  401287:	e8 d4 f8 ff ff       	call   400b60 <glutPostRedisplay@plt>
+  40128c:	90                   	nop
+  40128d:	c9                   	leave  
+  40128e:	c3                   	ret    
+
+000000000040128f <main>:
+  40128f:	55                   	push   rbp
+  401290:	48 89 e5             	mov    rbp,rsp
+  401293:	48 83 ec 10          	sub    rsp,0x10
+  401297:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+  40129a:	48 89 75 f0          	mov    QWORD PTR [rbp-0x10],rsi
+  40129e:	48 8b 55 f0          	mov    rdx,QWORD PTR [rbp-0x10]
+  4012a2:	48 8d 45 fc          	lea    rax,[rbp-0x4]
+  4012a6:	48 89 d6             	mov    rsi,rdx
+  4012a9:	48 89 c7             	mov    rdi,rax
+  4012ac:	e8 2f f9 ff ff       	call   400be0 <glutInit@plt>
+  4012b1:	b8 00 00 00 00       	mov    eax,0x0
+  4012b6:	e8 fb fa ff ff       	call   400db6 <myInit>
+  4012bb:	bf f2 10 40 00       	mov    edi,0x4010f2
+  4012c0:	e8 db f8 ff ff       	call   400ba0 <glutKeyboardFunc@plt>
+  4012c5:	8b 05 f5 0e 20 00    	mov    eax,DWORD PTR [rip+0x200ef5]        # 6021c0 <samplingTime>
+  4012cb:	ba 01 00 00 00       	mov    edx,0x1
+  4012d0:	be 1d 11 40 00       	mov    esi,0x40111d
+  4012d5:	89 c7                	mov    edi,eax
+  4012d7:	e8 94 f9 ff ff       	call   400c70 <glutTimerFunc@plt>
+  4012dc:	bf 1c 10 40 00       	mov    edi,0x40101c
+  4012e1:	e8 8a f8 ff ff       	call   400b70 <glutReshapeFunc@plt>
+  4012e6:	bf 04 0e 40 00       	mov    edi,0x400e04
+  4012eb:	e8 a0 f9 ff ff       	call   400c90 <glutDisplayFunc@plt>
+  4012f0:	e8 1b f9 ff ff       	call   400c10 <glutMainLoop@plt>
+  4012f5:	b8 00 00 00 00       	mov    eax,0x0
+  4012fa:	c9                   	leave  
+  4012fb:	c3                   	ret    
+  4012fc:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000401300 <__libc_csu_init>:
+  401300:	41 57                	push   r15
+  401302:	41 56                	push   r14
+  401304:	41 89 ff             	mov    r15d,edi
+  401307:	41 55                	push   r13
+  401309:	41 54                	push   r12
+  40130b:	4c 8d 25 b6 0a 20 00 	lea    r12,[rip+0x200ab6]        # 601dc8 <__frame_dummy_init_array_entry>
+  401312:	55                   	push   rbp
+  401313:	48 8d 2d b6 0a 20 00 	lea    rbp,[rip+0x200ab6]        # 601dd0 <__init_array_end>
+  40131a:	53                   	push   rbx
+  40131b:	49 89 f6             	mov    r14,rsi
+  40131e:	49 89 d5             	mov    r13,rdx
+  401321:	4c 29 e5             	sub    rbp,r12
+  401324:	48 83 ec 08          	sub    rsp,0x8
+  401328:	48 c1 fd 03          	sar    rbp,0x3
+  40132c:	e8 c7 f7 ff ff       	call   400af8 <_init>
+  401331:	48 85 ed             	test   rbp,rbp
+  401334:	74 20                	je     401356 <__libc_csu_init+0x56>
+  401336:	31 db                	xor    ebx,ebx
+  401338:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+  40133f:	00 
+  401340:	4c 89 ea             	mov    rdx,r13
+  401343:	4c 89 f6             	mov    rsi,r14
+  401346:	44 89 ff             	mov    edi,r15d
+  401349:	41 ff 14 dc          	call   QWORD PTR [r12+rbx*8]
+  40134d:	48 83 c3 01          	add    rbx,0x1
+  401351:	48 39 dd             	cmp    rbp,rbx
+  401354:	75 ea                	jne    401340 <__libc_csu_init+0x40>
+  401356:	48 83 c4 08          	add    rsp,0x8
+  40135a:	5b                   	pop    rbx
+  40135b:	5d                   	pop    rbp
+  40135c:	41 5c                	pop    r12
+  40135e:	41 5d                	pop    r13
+  401360:	41 5e                	pop    r14
+  401362:	41 5f                	pop    r15
+  401364:	c3                   	ret    
+  401365:	90                   	nop
+  401366:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+  40136d:	00 00 00 
+
+0000000000401370 <__libc_csu_fini>:
+  401370:	f3 c3                	repz ret 
+
+セクション .fini の逆アセンブル:
+
+0000000000401374 <_fini>:
+  401374:	48 83 ec 08          	sub    rsp,0x8
+  401378:	48 83 c4 08          	add    rsp,0x8
+  40137c:	c3                   	ret    
